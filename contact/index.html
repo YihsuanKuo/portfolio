@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Index</title>
+    <title>Contact</title>
 </head>
 <body>
-    <h1>Contact Index</h1>
     <nav>
-        <a href="index.html">Index</a>
-        <a href="projects/index.html">Project Index</a>
-        <a href="contact/index.html">Contact Index</a>
+        <a href="../index.html">Home</a>
+        <a href="../projects/index.html">Project</a>
+        <a href="index.html">Contact</a>
         <a href="https://github.com/YihsuanKuo" target="_blan">Github Portfolio</a>
     </nav>
+    <h1>Contact Index</h1>
     <form action="mailto:y3kuo@ucsd.edu" method="post" enctype="text/plain"></form>
-    <input name="email" type="email">
-    <input name="subject">
-    <textarea name="body"></textarea>
+    <label>
+        Email: <input name="email" type="email">
+    </label>
+    <label>
+        Subject:<input name="subject">
+    </label>
+    <label>
+        Body: <textarea name="body"></textarea>
+    </label>
+    <button>Submit</button>
 </body>
 </html>

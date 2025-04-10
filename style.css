@@ -87,3 +87,25 @@ h1{
 h1, h2, h3, h4, h5, h6{
   line-height: 1.1;
 }
+header.cv{
+  text-align: center;
+}
+header.cv h1, header.cv p{
+  line-height: 0.1;
+}
+header.cv p{
+  font-size: 110%;
+}
+
+.item-info {
+  display: flex;
+  justify-content: space-between; /* Distributes elements across the container */
+}
+.cv {
+  margin-top: 0;
+  margin-bottom: 0; /* Remove the bottom margin of the header */
+}
+ul {
+  margin-top: 1; /* Remove the top margin of the list */
+  /*padding-left: 0; /* Optional: Remove the default padding-left of the list */ 
+}

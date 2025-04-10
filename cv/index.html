@@ -14,12 +14,13 @@
         <a href="https://github.com/YihsuanKuo" target="_blank">Github Portfolio</a>
         <a class="current" href="index.html">My CV</a>
     </nav>
-    <h1>My CV</h1>
-    <a href="../Yi-Hsuan Kuo_Resume.pdf" target="_blank">Download the pdf version here</a>
-    <header>
-        <h2>Yi-Hsuan Kuo</h2>
+    <a href="../Yi-Hsuan Kuo_Resume.pdf" download="Yi-Hsuan Kuo_Resume.pdf">
+        <button type="button">Download the pdf version here</button>
+    </a>
+    <header class="cv">
+        <h1>Yi-Hsuan Kuo</h1>
         <p>
-            <a href="../contact/index.html">og87tony@gmail.com</a> | 
+            <a href="../contact/index.html">y3kuo@ucsd.edu</a> | 
             (310)803-0649 | 
             <a href="https://www.linkedin.com/in/yi-hsuan-kuo-964042317/" target="_blank">LinkedIn</a> | 
             <a href="https://github.com/YihsuanKuo" target="_blank">GitHub</a>
@@ -29,9 +30,10 @@
     <section>
         <article>
             <h2>Education</h2>
-            <strong>University of California, San Diego</strong>
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            <time>Sep. 2023 - Jan. 2027</time>
+            <div class="item-info">
+                <h3 class="cv">University of California, San Diego</class>
+                <time>Sep. 2023 - Jan. 2027</time>
+            </div>
             <ul>
                 <li>Major: Data Science, B.S.</li>
                 <li>GPA: 3.98/4.00</li>
@@ -42,12 +44,13 @@
     <section>
         <h2>Work Experience</h2>
         <article>
-            <a href="https://datascience.ucsd.edu/" target="_blank"><h3>Halıcıoğlu Data Science Institute</h3></a>
-            <strong>Undergraduate Tutor</strong>
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            <time>Mar. 2025 - Present</time>
-            <p>Data Structure and Algorithm for Data Science</p>
+            <a href="https://datascience.ucsd.edu/" target="_blank" class="cv"><h3>Halıcıoğlu Data Science Institute</h3></a>
+            <div class="item-info">
+                <h3 class="cv">Undergraduate Tutor</h3>
+                <time>Mar. 2025 - Present</time>
+            </div>
             <ul>
+                <li>Class tutor: DSC30 - Data Structure and Algorithm for Data Science</li>
                 <li>Hold office hours to help students with questions.</li>
                 <li>Answer and respond questions on discussion board.</li>
                 <li> Help the instructor with any need for improving or maintaining the class.</li>
@@ -55,9 +58,10 @@
         </article>
         <article>
             <a href="https://www.everfortuneai.com.tw/en/" target="_blank"><h3>Ever Fortune AI</h3></a>
-            <strong>AI Engineer Intern</strong>
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            <time>Aug. 2024 - Sep. 2024</time>
+            <div class="item-info">
+                <h3 class="cv">AI Engineer Intern</h3>
+                <time>Aug. 2024 - Sep. 2024</time>
+            </div>
             <ul>
                 <li>Assisted in developing a clinical-support AI designed to aid doctors in organ delineation for radiotherapy
                     treatment planning.</li>
@@ -71,17 +75,23 @@
     <section>
         <h2>Project</h2>
         <article>
-            <h3>"Why so Serious?" - Power Outage Analysis on Level of Duration Time</h3>
+            <div class="item-info" class="cv">
+                <h3 class="cv">The NBA Akinator</h3>
+                <time>Apr. 2025</time>
+            </div>
             <ul>
-                <li>Build a classier that classify the level of outage duration base on multiple inputs</li>
-                <li>Tools use: Python, Pandas, Sklearn, Numpy, Jupyter Notebook</li>
+                <li>Build a mind reading game using decision-tree-like logic to narrow down to what NBA player the user is thinking about.</li>
+                <li>Tools Used: Python, web-scrapping, Next.js</li>
             </ul>
         </article>
         <article>
-            <h3>Error Analysis on Organ Classifier Training</h3>
+            <div class="item-info">
+                <h3 class="cv">"Why so Serious?" - Power Outage Analysis on Level of Duration Time</h3>
+                <time>Feb. 2025</time>
+            </div>
             <ul>
-                <li> Analyze the error during AI model training and fix the error to obtained a more accurate training result.</li>
-                <li>Tools Used: Python, Jupyter Notebook, PyTorch</li>
+                <li>Build a classier that classify the level of outage duration base on multiple inputs</li>
+                <li>Tools use: Python, Pandas, Sklearn, Numpy, Jupyter Notebook</li>
             </ul>
         </article>
     </section>
@@ -100,9 +110,10 @@
         <h2>Club</h2>
         <article>
             <a href="https://www.instagram.com/ucsduta/", target="_blank"><h3>United Taiwanese Association of UCSD (UTA)</h3></a>
-            <strong>Treasurer</strong>
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            <time>Jul. 2024 - Present</time>
+            <div class="item-info">
+                <strong>Treasurer</strong>
+                <time>Jul. 2024 - Present</time>
+            </div>
             <ul>
                 <li>Managed and tracked UTA’s monetary and physical assets</li>
                 <li>Sought funding sources from both on-campus and off-campus organizations</li>

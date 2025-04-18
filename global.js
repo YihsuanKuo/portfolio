@@ -41,5 +41,33 @@ for (let p of pages) {
         a.target = '_blank';
     }
     nav.append(a);
-    
   }
+
+  // Inject the theme switcher HTML
+document.body.insertAdjacentHTML(
+    'afterbegin',
+    `
+    <label class="color-scheme">
+      Theme:
+      <select>
+        <option value="light dark">Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </label>`
+  );
+  
+  const select = document.querySelector('.color-scheme select');
+  
+  const savedScheme = localStorage.getItem('colorScheme');
+  if (savedScheme) {
+    document.documentElement.style.setProperty('color-scheme', savedScheme);
+    select.value = savedScheme;
+  }
+  
+  select.addEventListener('input', (event) => {
+    const selectedScheme = event.target.value;
+    document.documentElement.style.setProperty('color-scheme', selectedScheme);
+    localStorage.setItem('colorScheme', selectedScheme);
+  });
+  

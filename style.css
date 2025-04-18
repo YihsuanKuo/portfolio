@@ -1,17 +1,23 @@
 :root {
   --color-accent: oklch(65% 50% 0);
+  color-scheme: light dark;
 }
 html {
   accent-color: var(--color-accent);
+  border-bottom-color: oklch(50% 10% 200 / 40%);
 }
 
 body {
   font: 100%/1.5 system-ui;
   max-width: 100ch;
   margin-inline: max(1em, (100% - 100ch) / 2);
+  background-color: Canvas;
+  color: CanvasText;
 }
 
 nav {
+  --border-color: oklch(50% 10% 200 / 40%);
+  border-bottom-color: var(--border-color);
   display: flex;
   margin-bottom: 0.25em;
   border-bottom-width: 1px;
@@ -35,7 +41,7 @@ nav a:hover {
   border-bottom-width: 0.4em;
   border-bottom-style: solid;
   border-bottom-color: var(--color-accent);
-  background-color: oklch(from var(--color-accent) 95% 5% h)
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 input, textarea, button {
@@ -108,4 +114,11 @@ header.cv p{
 ul {
   margin-top: 1; /* Remove the top margin of the list */
   /*padding-left: 0; /* Optional: Remove the default padding-left of the list */ 
+}
+
+label.color-scheme{
+  position: absolute;
+  top:1rem;
+  right:1rem;
+  font: 80%;
 }

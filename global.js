@@ -22,7 +22,7 @@ let pages = [
   
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
     ? "/"
-    : "/website/"; // Replace with your GitHub repo name
+    : "yihsuankuo.github.io/portfolio/"; // Replace with your GitHub repo name
   
 let nav = document.createElement('nav');
 document.body.prepend(nav);

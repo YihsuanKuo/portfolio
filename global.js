@@ -20,9 +20,9 @@ let pages = [
     { url: 'cv/', title: 'My CV' }
   ];
   
-const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-    ? "/"
-    : "yihsuankuo.github.io/portfolio/"; // Replace with your GitHub repo name
+  const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+  ? "/"                  // Local server
+  : "https://yihsuankuo.github.io/portfolio/";         // GitHub Pages repo name
   
 let nav = document.createElement('nav');
 document.body.prepend(nav);

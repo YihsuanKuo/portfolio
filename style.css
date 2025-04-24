@@ -115,7 +115,6 @@ ul {
 }
 
 label.color-scheme{
-  display: flex;
   position: absolute;
   top:1rem;
   right:1rem;

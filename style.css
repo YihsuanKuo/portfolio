@@ -122,3 +122,33 @@ label.color-scheme{
   right:1rem;
   font: 80%;
 }
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+  display: grid;
+}
+
+/* Grid styling for the stats */
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5em 1em;
+  margin: 0;
+  padding: 0.5em 0;
+}
+
+#profile-stats dt {
+  grid-row: 1;
+  text-align: center;
+  font-weight: bold;
+  color: #555;
+}
+
+#profile-stats dd {
+  grid-row: 2;
+  text-align: center;
+  margin: 0;
+  font-size: 2em;
+  color: #515356;
+}

@@ -4,14 +4,6 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
-// let navLinks = $$("nav a");
-
-// let currentLink = navLinks.find(
-//     (a) => a.host === location.host && a.pathname === location.pathname,
-//   );
-
-//   currentLink?.classList.add('current');
-
 let pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
@@ -21,7 +13,7 @@ let pages = [
   ];
   
   const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-  ? "/"                  // Local server
+  ? "/portfolio/"                  // Local server
   : "https://yihsuankuo.github.io/portfolio/";         // GitHub Pages repo name
   
 let nav = document.createElement('nav');
@@ -45,7 +37,7 @@ for (let p of pages) {
     nav.append(a);
   }
 
-  // Inject the theme switcher HTML
+
 document.body.insertAdjacentHTML(
     'afterbegin',
     `
@@ -73,15 +65,38 @@ document.body.insertAdjacentHTML(
     localStorage.setItem('colorScheme', selectedScheme);
   });
   
-export async function fetchJSON(url) {
+  export async function fetchJSON(url) {
     try {
-      // Fetch the JSON file from the given URL
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`Failed to fetch projects: ${response.statusText}`);
       }
+      // Optional: Inspect the response in the console
+      console.log(response);
+      const data = await response.json();
+      return data;
     } catch (error) {
       console.error('Error fetching or parsing JSON data:', error);
     }
-    
+  }
+
+  export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+    containerElement.innerHTML = '';
+    for (const project of projects) {
+      const article = document.createElement('article');
+      const title = project.title || 'Untitled Project';
+      const image = project.image ? `<img src="${project.image}" alt="${title}">` : '';
+      const description = project.description || '';
+  
+      article.innerHTML = `
+        <${headingLevel}>${title}</${headingLevel}>
+        ${image}
+        <p>${description}</p>
+      `;
+      containerElement.appendChild(article);
+    }
+  }
+  
+  export async function fetchGitHubData(username) {
+    return fetchJSON(`https://api.github.com/users/${username}`);
   }

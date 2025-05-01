@@ -23,25 +23,3 @@ if (profileStats) {
       </dl>
     `;
   }
-
-// async function displayGitHubStats() {
-//     const profileStats = document.querySelector('#profile-stats');
-//     if (profileStats) {
-//       try {
-//         const githubData = await fetchGitHubData('YihsuanKuo');
-//         profileStats.innerHTML = `
-//           <h2>GitHub Profile Stats</h2>
-//           <dl>
-//             <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
-//             <dt>Public Gists:</dt><dd>${githubData.public_gists}</dd>
-//             <dt>Followers:</dt><dd>${githubData.followers}</dd>
-//             <dt>Following:</dt><dd>${githubData.following}</dd>
-//           </dl>
-//         `;
-//       } catch (error) {
-//         profileStats.textContent = 'Failed to load GitHub data.';
-//       }
-//     }
-//   }
-  
-//   displayGitHubStats();

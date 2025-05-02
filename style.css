@@ -152,3 +152,72 @@ label.color-scheme{
   font-size: 2em;
   color: #515356;
 }
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+  overflow: visible;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 1em;
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin-top: 1em;
+  background: #fafafa;
+  list-style: none;
+}
+ul.legend li {
+  transition: opacity 0.3s, color 0.3s, background 0.3s;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: sans-serif;
+}
+.legend-item .swatch {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  background: var(--color);
+  border-radius: 0.3em;
+  border: 1px solid #bbb;
+  margin-right: 0.5em;
+}
+
+svg path {
+  transition: 300ms;
+}
+
+/* Pie slice hover/fade */
+svg:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+/* Pie slice selection */
+.selected {
+  --color: oklch(60% 45% 0) !important;
+  fill: var(--color) !important;
+  stroke: #222;
+  stroke-width: 2px;
+}
+svg:has(.selected) path:not(.selected) {
+  opacity: 0.5;
+}
+
+/* Legend selection/fade */
+ul.legend:has(.selected) li:not(.selected) {
+  color: gray;
+  opacity: 0.5;
+}
+.legend-item.selected {
+  --color: oklch(60% 45% 0) !important;
+  color: var(--color) !important;
+  opacity: 1 !important;
+}
+.legend-item.selected .swatch {
+  background: var(--color) !important;
+}

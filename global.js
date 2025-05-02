@@ -87,11 +87,15 @@ document.body.insertAdjacentHTML(
       const title = project.title || 'Untitled Project';
       const image = project.image ? `<img src="${project.image}" alt="${title}">` : '';
       const description = project.description || '';
+      const year = project.Year || '';
   
       article.innerHTML = `
         <${headingLevel}>${title}</${headingLevel}>
         ${image}
-        <p>${description}</p>
+        <div>
+          <p>${description}</p>
+          <i style="font-family: Baskerville, serif; font-variant-numeric: oldstyle-nums;">c. ${year}</i>
+        </div>
       `;
       containerElement.appendChild(article);
     }

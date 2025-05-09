@@ -221,3 +221,106 @@ ul.legend:has(.selected) li:not(.selected) {
 .legend-item.selected .swatch {
   background: var(--color) !important;
 }
+
+#stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5em 1em;
+  margin: 0;
+  padding: 0.5em 0;
+}
+
+#stats dt {
+  grid-row: 1;
+  text-align: center;
+  font-weight: bold;
+  color: #555;
+}
+
+#stats dd {
+  grid-row: 2;
+  text-align: center;
+  margin: 0;
+  font-size: 2em;
+  color: #515356;
+}
+
+/* 1. Grid layout for <dl class="info"> */
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25em 1em;
+  margin: 0;
+  padding: 0.5em 1em;
+}
+
+dl.info dt {
+  margin: 0;
+  color: #888;           /* Make labels less prominent */
+  font-weight: normal;
+}
+
+dl.info dd {
+  margin: 0;
+  font-weight: bold;     /* Make values stand out */
+}
+
+/* 2. Tooltip styling */
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  background: rgba(255, 255, 255, 0.95);        /* Semi-transparent background */
+  border: 1px solid #eee;                       /* Softer border */
+  padding: 1em 1.5em;                           /* More generous padding */
+  border-radius: 0.75em;                        /* More pronounced rounded corners */
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15), 
+              0 1.5px 4px rgba(0,0,0,0.08);     /* Subtle, layered shadow for elevation */
+  z-index: 1000;
+  pointer-events: none;                         /* Ensures tooltip doesn't block mouse events */
+  font-size: 1em;
+  line-height: 1.5;
+  color: #222;                                  /* Slightly darker text for readability */
+  max-width: 320px;
+  margin: 0;
+  backdrop-filter: blur(4px);                   /* Frosted glass effect (optional) */
+  display: none;                                /* Hide by default, show on hover */
+}
+
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+dl.info {
+  /* ... other styles ... */
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8;
+  }
+}

@@ -1,4 +1,10 @@
-[
+[   {
+        "title": "Bikewatching Map",
+        "Year":"2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Build a mind reading game using decision-tree-like logic to narrow down to what NBA player the user is thinking about.",
+        "url":"https://yihsuankuo.github.io/bikewatching/"
+    },
     {
         "title": "The NBA Akinator",
         "Year":"2025",

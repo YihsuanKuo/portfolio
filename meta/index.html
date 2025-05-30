@@ -6,14 +6,38 @@
     <title>Meta</title>
     <link rel="stylesheet" href="../style.css">
     <script type="module" src="../global.js"></script>
-    <script type="module" src="main.js"></script>
+    <script type="module" src="meta.js"></script>
 </head>
 <body>
     <h1 class="projects-title">Meta</h1>
     <p>Here include stats about this website</p>
+    <div id="slider">
+      <label>
+        Show commits until:
+        <input type="range" id="commit-progress" min="0" max="100">
+        <time id="commit-time"></time>
+      </label>
+    </div>
     <div id="stats" class="dropdown"></div>
     <h2>Commits by time of day</h2>
-    <div id="chart"></div>
+    <div id="scrolly-1">
+      <div id="scatter-story">
+        <!-- Commit steps will be populated here by JS -->
+      </div>
+    
+      <div id="scatter-plot">
+        <div id="chart"></div>
+        <p id="selection-count">No commits selected</p>
+        <dl id="language-breakdown" class="stats"></dl>
+    
+        <!-- 👇 Add this to place the files under the chart -->
+        <div id="files-wrapper">
+          <h3>Files Committed</h3>
+          <dl id="files"></dl>
+        </div>
+      </div>
+    </div>
+    
     <dl id="commit-tooltip" class="info tooltip" hidden>
         <dt>Commit</dt>
         <dd>
